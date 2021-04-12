@@ -187,8 +187,6 @@ def public():
 			exit()
 		r = requests.get("https://graph.facebook.com/"+idt+"/friends?access_token="+toket)
 		z = json.loads(r.text)
-		for i in z['data']:
-			id.append(i['id'])
 	elif mtd =="0" or mtd =="00":
 		public()
 	else:
