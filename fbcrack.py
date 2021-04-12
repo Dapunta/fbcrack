@@ -22,6 +22,15 @@ def jalan(z):
 def banner():
     os.system('echo -e "             _______      ________  ___  _______ __\n            / __/ _ )____/ ___/ _ \/ _ |/ ___/ //_/\n           / _// _  /___/ /__/ , _/ __ / /__/ ,< \n          /_/ /____/    \___/_/|_/_/ |_\___/_/|_|\n\n               Coded By : Dapunta Khurayra X\n─────────────────────────────────────────────────────────────" | lolcat')
 
+back = 0
+threads = []
+berhasil = []
+cekpoint = []
+oks = []
+oke = []
+id = []
+fbid = []
+
 def login():
     os.system("clear")
     banner()
