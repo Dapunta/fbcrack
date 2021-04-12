@@ -9,6 +9,15 @@ from requests.exceptions import ConnectionError
 reload(sys)
 sys.setdefaultencoding('utf8')
 
+back = 0
+threads = []
+berhasil = []
+cekpoint = []
+oks = []
+oke = []
+id = []
+fbid = []
+
 def keluar():
 	print ("   [!] Exit")
 	os.sys.exit()
@@ -21,15 +30,6 @@ def jalan(z):
 
 def banner():
     os.system('echo -e "             _______      ________  ___  _______ __\n            / __/ _ )____/ ___/ _ \/ _ |/ ___/ //_/\n           / _// _  /___/ /__/ , _/ __ / /__/ ,< \n          /_/ /____/    \___/_/|_/_/ |_\___/_/|_|\n\n               Coded By : Dapunta Khurayra X\n─────────────────────────────────────────────────────────────" | lolcat')
-
-back = 0
-threads = []
-berhasil = []
-cekpoint = []
-oks = []
-oke = []
-id = []
-fbid = []
 
 def login():
     os.system("clear")
@@ -184,9 +184,11 @@ def public():
 			menu()
 		except requests.exceptions.ConnectionError:
 			print ("   [!] No Connection")
-			exit()
+			keluar()
 		r = requests.get("https://graph.facebook.com/"+idt+"/friends?access_token="+toket)
 		z = json.loads(r.text)
+		for i in z['data']:
+			id.append(i['id'])
 	elif mtd =="0" or mtd =="00":
 		public()
 	else:
