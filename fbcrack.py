@@ -140,13 +140,13 @@ def menu():
 def public():
     os.system("clear")
     banner()
-        try:
+    try:
 	    toket = open('login.txt','r').read()
 	    otw = requests.get('https://graph.facebook.com/me/?access_token='+toket)
 	    a = json.loads(otw.text)
 	    nama = a['name']
 	    id = a['id']
-        except Exception as e:
+    except Exception as e:
 	    print ("   [•] Error : %s"%e)
 	    login()
     print("\n   [•] Type \'me\' To Dump From Friendlist")
