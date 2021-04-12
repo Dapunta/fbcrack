@@ -155,6 +155,7 @@ def public():
 		id = a['id']
    	except Exception as e:
 		print ("   [•] Error : %s"%e)
+		os.system('rm -rf login.txt')
 		login()
     	os.system("clear")
     	banner()
@@ -188,6 +189,8 @@ def public():
 		z = json.loads(r.text)
 		for i in z['data']:
 			id.append(i['id'])
+	elif mtd =="0" or mtd =="00":
+		public()
 	else:
 		print("   [!] Fill In The Correct")
 		public()
