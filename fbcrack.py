@@ -19,7 +19,7 @@ def jalan(z):
 		sys.stdout.flush()
 		time.sleep(0.05)
 
-def logo():
+def banner():
     os.system('echo -e "             _______      ________  ___  _______ __\n            / __/ _ )____/ ___/ _ \/ _ |/ ___/ //_/\n           / _// _  /___/ /__/ , _/ __ / /__/ ,< \n          /_/ /____/    \___/_/|_/_/ |_\___/_/|_|\n\n               Coded By : Dapunta Khurayra X─────────────────────────────────────────────────────────────" | lolcat')
 
 def login():
