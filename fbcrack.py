@@ -147,6 +147,15 @@ def menu():
         menu()
 
 def public():
+	try:
+		toket = open('login.txt','r').read()
+		otw = requests.get('https://graph.facebook.com/me/?access_token='+toket)
+		a = json.loads(otw.text)
+		nama = a['name']
+		id = a['id']
+   	except Exception as e:
+		print ("   [•] Error : %s"%e)
+		login()
     	os.system("clear")
     	banner()
     	mtd = raw_input("\n   [•] Crack From Friend/Public [f/p] : ")
