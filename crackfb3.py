@@ -173,9 +173,9 @@ def menu():
 	print("\n   [•] Hello : "+nama)
 	print("   [•] UID   : "+id)
 	os.system('echo -e "\n─────────────────────────────────────────────────────────────" | lolcat')
-    print ("\n   [ Choose Options ]")
-    print ("\n   [1] Crack With Manual Pass")
-    print ("   [0] Log Out")
+    	print ("\n   [ Choose Options ]")
+    	print ("\n   [1] Crack With Manual Pass")
+    	print ("   [0] Log Out")
 	pilih_menu()
 
 def pilih_menu():
@@ -197,9 +197,9 @@ def passchoice():
 	os.system("clear")
 	banner()
 	print ("\n   [ Choose Target]")
-    print ("\n   [1] Crack From Friendlist")
-    print ("   [2] Crack From Public")
-    print ("   [3] Back To Menu")
+    	print ("\n   [1] Crack From Friendlist")
+    	print ("   [2] Crack From Public")
+    	print ("   [3] Back To Menu")
 	pilih_passxd()
 	
 def pilih_passxd():
@@ -243,7 +243,7 @@ def pilih_passxd():
 	pass1 = raw_input ("   [•] Pass 1 : ")
 	pass2 = raw_input ("   [•] Pass 2 : ")
 	pass3 = raw_input ("   [•] Pass 3 : ")
-    print ("   [•] Crack Started...\n")
+    	print ("   [•] Crack Started...\n")
 	
 	def main(arg):
 		global cekpoint,oks
