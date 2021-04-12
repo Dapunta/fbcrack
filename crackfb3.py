@@ -70,7 +70,7 @@ def masuk():
     pilih_masuk()
         
 def pilih_masuk():
-        sek=raw_input("\n   [•] Choose : ")
+    sek=raw_input("\n   [•] Choose : ")
     if sek=="":
         print("   [!] Fill In The Correct")
         masuk()
