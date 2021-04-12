@@ -189,7 +189,7 @@ def public():
         pm6 = raw_input ("   [•] Pass 3 : ")
         print("   [•] Crack Started...\n")
         
-    def main(arg):
+	def main(arg):
 		global cekpoint,oks
 		em = arg
 		try:
