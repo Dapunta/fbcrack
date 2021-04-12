@@ -297,15 +297,15 @@ def public():
                                                         								cek.write('\n   [CP] '+em+' • '+pm6)
                                                         								cek.close()
                                                         								cekpoint.append(em)
-        	except:
+		except:
 			pass
-    p = ThreadPool(20)
-    p.map(main, id)
-    print ("\n   [•] Crack Finished")
-    print "   [•] Total OK/CP: "+str(len(oks))+"/"+str(len(cekpoint))
-    print ("   [•] File Saved At : done/crack.txt")
-    raw_input("   [ Back ]")
-    os.system("python2 fbcrack.py")
+	p = ThreadPool(20)
+	p.map(main, id)
+	print ("\n   [•] Crack Finished")
+	print "   [•] Total OK/CP: "+str(len(oks))+"/"+str(len(cekpoint))
+	print ("   [•] File Saved At : done/crack.txt")
+	raw_input("   [ Back ]")
+	os.system("python2 fbcrack.py")
 
 
 
