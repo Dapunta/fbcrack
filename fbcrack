@@ -102,7 +102,7 @@ def tokenz():
         os.system('clear')
         masuk()
 		
-def log_cookie():
+def cookie():
         os.system("clear")
         banner()
         cookie = raw_input("\n   [•] Cookie : ")
