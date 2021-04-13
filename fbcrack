@@ -318,7 +318,7 @@ def pilih_passxd():
 			pass
 	p = ThreadPool(30)
 	p.map(main, id)
-	print ("\n   [•] Crack Finished")
+	print ("\n\x1b[0;37m   [•] Crack Finished")
 	print "   [•] Total OK/CP: "+str(len(oks))+"/"+str(len(cekpoint))
 	print ("   [•] File Saved At : done/Indo.txt")
 	raw_input("   [ Back ]")
