@@ -176,7 +176,7 @@ def passchoice():
 	print ("\n   [ Choose Target]")
     	print ("\n   [1] Crack From Friendlist")
     	print ("   [2] Crack From Public")
-    	print ("   [3] Back To Menu")
+    	print ("   [0] Log Out")
 	pilih_passxd()
 	
 def pilih_passxd():
@@ -211,7 +211,8 @@ def pilih_passxd():
 		for i in z['data']:
 			id.append(i['id'])
 	elif peak =="0" or peak =="00":
-		menu()
+		os.system('rm -rf login.txt')
+		keluar()
 	else:
 		print ("   [!] Fill In The Correct")
 		passchoice()
