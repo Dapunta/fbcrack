@@ -218,12 +218,12 @@ def pilih_passxd():
 		passchoice()
 	
         print "   [•] Total ID       : "+str(len(id))
-	pass4 = raw_input("   [•] Password 1     : ")
+	pass4 = raw_input("\n   [•] Password 1     : ")
 	pass5 = raw_input("   [•] Password 2     : ")
 	pass6 = raw_input("   [•] Password 3     : ")
 	pass7 = raw_input("   [•] Password 4     : ")
 	pass8 = raw_input("   [•] Password 5     : ")
-    	print ("   [•] Crack Started...\n")
+    	print ("\n   [•] Crack Started...\n")
 	
 	def main(arg):
 		global cekpoint,oks
