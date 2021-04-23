@@ -66,6 +66,7 @@ def masuk():
     print("\n   [ Choose Login Methode ]")
     print("\n   [1] Login With Token")
     print("   [2] Login With Cookie")
+    print("   [3] Update Script")
     print("   [0] Exit")
     pilih_masuk()
         
@@ -78,6 +79,8 @@ def pilih_masuk():
         tokenz()
     elif sek=="2":
         cookie()
+    elif sek=="3":
+        updatesc()
     elif sek=="0":
         keluar()
     else:
